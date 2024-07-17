@@ -1,0 +1,23 @@
+class Solution{
+    public void Sortcolors(int[] arr){
+        int start =0,mid=0,end = arr.length-1;
+        while(mid<=end){
+            if(arr[mid]==2){
+                swap(arr,mid,end);
+                end--;
+            }else if(arr[mid]==1){
+                mid++;
+            }else{
+                swap(arr,start,mid);
+                start++;
+                mid++;
+            }
+        }
+    }
+    private void swap(int[] arr,int pos1,int pos2){
+        int temp = arr[pos1];
+        arr[pos1] = arr[pos2];
+        arr[pos2] = temp;
+    }
+    
+}
